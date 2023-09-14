@@ -5,7 +5,7 @@ COPY --chown=$MAMBA_USER:$MAMBA_USER env.yml /tmp/env.yml
 RUN micromamba install -y -n base -f /tmp/env.yml && \
     micromamba clean --all --yes
 
-RUN micromamba run pip install --no-cache "quetz-server[gcs]" "pydantic<2" "xattr"
+RUN micromamba run pip install --no-cache "quetz-server[gcs,postgre]" "pydantic<2" "xattr"
 
 RUN micromamba run pip install quetz-frontend
 
