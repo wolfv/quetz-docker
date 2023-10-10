@@ -7,7 +7,7 @@ RUN micromamba install -y -n base -f /tmp/env.yml && \
 
 RUN micromamba run pip install --no-cache "quetz-server[gcs,postgre]" "pydantic<2" "xattr"
 
-RUN micromamba run pip install quetz-frontend
+RUN micromamba run pip install quetz-frontend gcsfs
 
 COPY wait-for-it.sh /usr/bin/wait-for-it.sh
 
